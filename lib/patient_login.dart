@@ -3,9 +3,44 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-class PatientLogin extends StatelessWidget{
 
-  const PatientLogin({Key? key}) : super(key: key);
+class PatientLogin extends StatefulWidget{
+
+  const PatientLogin({Key ? key}) : super (key : key);
+
+  _PatientLogin createState() =>  _PatientLogin();
+
+}
+
+
+
+
+class _PatientLogin extends State<PatientLogin>{
+
+
+
+  late String _patientId, _patientName;
+  var patientIdInput = TextEditingController();
+  var patientPasswordInput = TextEditingController();
+
+  @override
+  void initState(){
+
+    _patientId = "";
+    _patientName = "";
+    super.initState();
+
+  }
+
+  makeLogin() async {
+
+    String URL = "http://localhost:8888/webApi/index.php?option=loginPatient";
+
+    
+
+  }
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -17,10 +52,10 @@ class PatientLogin extends StatelessWidget{
         child: Center(
           child: SingleChildScrollView(
             child: Column(
-              children: [
+              children: <Widget>[
                 Text(
                   'Planificació Cognitiva',
-                  style: TextStyle(
+                    style: TextStyle(
                     fontWeight: FontWeight.w900,
                     fontSize: 20.0,
                     color: Colors.blue),
@@ -78,7 +113,8 @@ class PatientLogin extends StatelessWidget{
 
   }
 
-  
+
+
 
 
 }
